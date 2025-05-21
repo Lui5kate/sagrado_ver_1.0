@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle del Pedido{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="mb-4">Detalle del Pedido #{{ order.id }}</h1>
+        <div class="card bg-dark text-white mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Datos del Pedido</h5>
+                <p><strong>Fecha:</strong> {{ order.order_date|date:"d/m/Y H:i" }}</p>
+                <p><strong>Estado:</strong> {{ order.get_status_display }}</p>
+                <p><strong>Total:</strong> ${{ order.total_amount }}</p>
+                <p><strong>Notas:</strong> {{ order.notes|default:"-" }}</p>
+            </div>
+        </div>
+        <div class="card bg-dark text-white">
+            <div class="card-body">
+                <h5 class="card-title">Productos</h5>
+                <ul class="list-group list-group-flush">
+                    {% for item in order.items.all %}
+                    <li class="list-group-item bg-dark text-white d-flex justify-content-between align-items-center">
+                        {{ item.menu_item.name }} <span>x{{ item.quantity }}</span> <span>${{ item.price }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <a href="/order-history/" class="btn btn-outline-light mt-4">Volver al historial</a>
+    </div>
+</section>
+{% endblock %} 

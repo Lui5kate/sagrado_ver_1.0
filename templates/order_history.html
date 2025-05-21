@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Historial de Pedidos{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="mb-4">Historial de Pedidos</h1>
+        {% if orders %}
+        <div class="table-responsive">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Fecha</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                        <th>Detalles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td>{{ order.id }}</td>
+                        <td>{{ order.order_date|date:"d/m/Y H:i" }}</td>
+                        <td>${{ order.total_amount }}</td>
+                        <td>{{ order.get_status_display }}</td>
+                        <td><a href="/order/{{ order.id }}/" class="btn btn-outline-light btn-sm">Ver</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>No tienes pedidos registrados.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %} 

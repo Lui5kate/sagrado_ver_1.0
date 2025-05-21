@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %}Acerca de Nosotros{% endblock %}
+
+{% block content %}
+<section class="about-section py-5">
+    <div class="container">
+        <h1 class="text-center mb-5">Nuestra Historia</h1>
+        
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <img src="/static/images/about-1.jpg" alt="Historia de Sagrado Cantina" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-4" style="color: var(--color-dorado);">Nuestros Orígenes</h2>
+                <p class="lead">Sagrado Cantina nace de la pasión por la gastronomía mexicana y el deseo de compartir los sabores auténticos de nuestro país.</p>
+                <p>Fundado en 2015, nuestro restaurante se ha convertido en un referente de la cocina mexicana contemporánea, manteniendo viva la tradición culinaria mientras innovamos con nuevas técnicas y presentaciones.</p>
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-5 flex-row-reverse">
+            <div class="col-md-6">
+                <img src="/static/images/about-2.jpg" alt="Nuestra Filosofía" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-4" style="color: var(--color-dorado);">Nuestra Filosofía</h2>
+                <p>En Sagrado Cantina, creemos que la comida es más que una necesidad básica; es una experiencia que une a las personas y celebra nuestra cultura.</p>
+                <p>Nuestra filosofía se basa en tres pilares fundamentales:</p>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle me-2" style="color: var(--color-dorado);"></i>Autenticidad en cada platillo</li>
+                    <li><i class="fas fa-check-circle me-2" style="color: var(--color-dorado);"></i>Ingredientes frescos y de temporada</li>
+                    <li><i class="fas fa-check-circle me-2" style="color: var(--color-dorado);"></i>Experiencia gastronómica memorable</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="mb-4" style="color: var(--color-dorado);">Nuestro Equipo</h2>
+                <p class="lead mb-5">Detrás de cada platillo hay un equipo apasionado por la gastronomía mexicana</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="team-member text-center">
+                    <img src="/static/images/chef-1.jpg" alt="Chef Principal" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+                    <h4>Chef Carlos Rodríguez</h4>
+                    <p class="text-muted">Chef Principal</p>
+                    <p>Con más de 20 años de experiencia en la cocina mexicana tradicional</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="team-member text-center">
+                    <img src="/static/images/chef-2.jpg" alt="Sous Chef" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+                    <h4>María González</h4>
+                    <p class="text-muted">Sous Chef</p>
+                    <p>Especialista en salsas y técnicas tradicionales</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="team-member text-center">
+                    <img src="/static/images/chef-3.jpg" alt="Pastelera" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+                    <h4>Ana Martínez</h4>
+                    <p class="text-muted">Pastelera</p>
+                    <p>Maestra en postres tradicionales mexicanos</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="mb-4" style="color: var(--color-dorado);">Nuestros Valores</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="value-item">
+                            <i class="fas fa-heart fa-3x mb-3" style="color: var(--color-dorado);"></i>
+                            <h4>Pasión</h4>
+                            <p>Amor por la gastronomía mexicana y su tradición</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="value-item">
+                            <i class="fas fa-leaf fa-3x mb-3" style="color: var(--color-dorado);"></i>
+                            <h4>Sustentabilidad</h4>
+                            <p>Compromiso con ingredientes locales y prácticas sostenibles</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="value-item">
+                            <i class="fas fa-users fa-3x mb-3" style="color: var(--color-dorado);"></i>
+                            <h4>Comunidad</h4>
+                            <p>Creación de experiencias que unen a las personas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

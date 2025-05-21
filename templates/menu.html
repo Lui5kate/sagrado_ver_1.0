@@ -1,0 +1,329 @@
+{% extends 'base.html' %}
+
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="menu-hero position-relative">
+    <div class="container">
+        <div class="row min-vh-50 align-items-center">
+            <div class="col-lg-8" data-aos="fade-right">
+                <h1 class="display-3 text-white fw-bold mb-4">Our Menu</h1>
+                <p class="lead text-white mb-4">Discover the authentic flavors of Mexico</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Menu Categories -->
+<section class="menu-categories py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-pills justify-content-center mb-5" id="menuTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="starters-tab" data-bs-toggle="pill" data-bs-target="#starters" type="button" role="tab">Starters</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tacos-tab" data-bs-toggle="pill" data-bs-target="#tacos" type="button" role="tab">Tacos</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="mains-tab" data-bs-toggle="pill" data-bs-target="#mains" type="button" role="tab">Main Courses</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="desserts-tab" data-bs-toggle="pill" data-bs-target="#desserts" type="button" role="tab">Desserts</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="drinks-tab" data-bs-toggle="pill" data-bs-target="#drinks" type="button" role="tab">Drinks</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-content" id="menuTabsContent">
+            <!-- Starters -->
+            <div class="tab-pane fade show active" id="starters" role="tabpanel">
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="menu-item">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/static/images/1000031094.jpg" class="img-fluid rounded-start" alt="Guacamole">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Traditional Guacamole</h5>
+                                        <p class="card-text">Avocado, tomato, onion, cilantro, and lime. Served with homemade tortilla chips.</p>
+                                        <p class="price">$18</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="menu-item">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/static/images/1000032006.jpg" class="img-fluid rounded-start" alt="Queso Fundido">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Melted Cheese</h5>
+                                        <p class="card-text">Oaxaca cheese melted with chorizo and poblano peppers. Served with corn tortillas.</p>
+                                        <p class="price">$22</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tacos -->
+            <div class="tab-pane fade" id="tacos" role="tabpanel">
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="menu-item">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/static/images/1000031094.jpg" class="img-fluid rounded-start" alt="Al Pastor Tacos">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Al Pastor Tacos</h5>
+                                        <p class="card-text">Pork marinated in adobo, pineapple, and onion. Served with cilantro and lime.</p>
+                                        <p class="price">$26 (3 tacos)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="menu-item">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/static/images/1000032006.jpg" class="img-fluid rounded-start" alt="Carnitas Tacos">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Carnitas Tacos</h5>
+                                        <p class="card-text">Confit pork with our special sauces and guacamole.</p>
+                                        <p class="price">$24 (3 tacos)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Courses -->
+            <div class="tab-pane fade" id="mains" role="tabpanel">
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="menu-item">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/static/images/1000032006.jpg" class="img-fluid rounded-start" alt="Mole Poblano">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Puebla Mole</h5>
+                                        <p class="card-text">Chicken smothered in our traditional mole sauce, prepared with over 20 ingredients.</p>
+                                        <p class="price">$42</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="menu-item">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/static/images/ChatGPT Image Apr 2, 2025, 01_31_29 PM.png" class="img-fluid rounded-start" alt="Cochinita Pibil">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Cochinita Pibil</h5>
+                                        <p class="card-text">Pork marinated in achiote and wrapped in banana leaf. Served with pickled red onions and habanero.</p>
+                                        <p class="price">$38</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="tab-pane fade" id="desserts" role="tabpanel">
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="menu-item">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/static/images/1000031094.jpg" class="img-fluid rounded-start" alt="Flan">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Homemade Flan</h5>
+                                        <p class="card-text">Traditional caramel custard with whipped cream.</p>
+                                        <p class="price">$16</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="menu-item">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/static/images/1000032006.jpg" class="img-fluid rounded-start" alt="Churros">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Churros</h5>
+                                        <p class="card-text">Freshly made churros with hot chocolate and cinnamon.</p>
+                                        <p class="price">$18</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drinks -->
+            <div class="tab-pane fade" id="drinks" role="tabpanel">
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="menu-item">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/static/images/1000031094.jpg" class="img-fluid rounded-start" alt="Margarita">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Classic Margarita</h5>
+                                        <p class="card-text">Tequila, triple sec, lime juice, and salt rim.</p>
+                                        <p class="price">$22</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="menu-item">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/static/images/1000032006.jpg" class="img-fluid rounded-start" alt="Mezcal">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Artisanal Mezcal</h5>
+                                        <p class="card-text">Selection of artisanal mezcals from different regions of Mexico.</p>
+                                        <p class="price">$26</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5 text-center text-white" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/static/images/1000014494.jpg'); background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8" data-aos="zoom-in">
+                <h2 class="display-4 mb-4">Ready to try our dishes?</h2>
+                <p class="lead mb-4">Book your table now and enjoy the best Mexican cuisine in Auckland</p>
+                <a href="/book" class="btn btn-primary btn-lg me-3">Book a Table</a>
+                <a href="/order" class="btn btn-outline-light btn-lg">Order Online</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.menu-hero {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/static/images/1000014494.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.nav-pills .nav-link {
+    color: var(--text-color);
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.menu-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item .card-body {
+    padding: 1.5rem;
+}
+
+.menu-item .card-title {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item .card-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item .price {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.cta-section {
+    position: relative;
+    background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+    .nav-pills .nav-link {
+        margin: 0.25rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .menu-item {
+        margin-bottom: 1.5rem;
+    }
+}
+</style>
+{% endblock %} 

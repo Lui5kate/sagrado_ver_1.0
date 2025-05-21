@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+
+{% block title %}Pedir en Línea{% endblock %}
+
+{% block content %}
+<section class="order-section py-5">
+    <div class="container">
+        <h1 class="text-center mb-5">Pedir en Línea</h1>
+        
+        <div class="row">
+            <!-- Menú -->
+            <div class="col-md-8">
+                <div class="menu-categories mb-4">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-light active" data-category="all">Todos</button>
+                        {% for category in categories %}
+                        <button type="button" class="btn btn-outline-light" data-category="{{ category }}">{{ category }}</button>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="menu-items">
+                    {% for item in menu_items %}
+                    <div class="menu-item mb-4" data-category="{{ item.category }}">
+                        <div class="card bg-dark text-white">
+                            <div class="row g-0">
+                                {% if item.image %}
+                                <div class="col-md-4">
+                                    <img src="{{ item.image.url }}" class="img-fluid rounded-start" alt="{{ item.name }}">
+                                </div>
+                                {% endif %}
+                                <div class="col-md-{% if item.image %}8{% else %}12{% endif %}">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <h5 class="card-title">{{ item.name }}</h5>
+                                            <span class="price">${{ item.price }}</span>
+                                        </div>
+                                        <p class="card-text">{{ item.description }}</p>
+                                        <div class="quantity-controls">
+                                            <button class="btn btn-sm btn-outline-light decrease-quantity" data-item-id="{{ item.id }}">-</button>
+                                            <span class="quantity mx-2" data-item-id="{{ item.id }}">0</span>
+                                            <button class="btn btn-sm btn-outline-light increase-quantity" data-item-id="{{ item.id }}">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Carrito -->
+            <div class="col-md-4">
+                <div class="cart-container">
+                    <h3 class="mb-4">Tu Pedido</h3>
+                    <div id="cart-items" class="mb-4">
+                        <!-- Los items del carrito se agregarán aquí dinámicamente -->
+                    </div>
+                    <div class="cart-total mb-4">
+                        <h4>Total: $<span id="cart-total">0.00</span></h4>
+                    </div>
+                    <button class="btn btn-outline-light w-100 mb-4" id="checkout-btn" disabled>Proceder al Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal de Checkout -->
+<div class="modal fade" id="checkoutModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title">Completar Pedido</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="checkout-form">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Dirección de Entrega</label>
+                        <textarea class="form-control" id="address" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="notes" class="form-label">Notas Especiales</label>
+                        <textarea class="form-control" id="notes" rows="2"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-outline-light" id="submit-order">Realizar Pedido</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+let cart = {};
+
+// Funciones para el carrito
+function updateCart() {
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const checkoutBtn = document.getElementById('checkout-btn');
+    let total = 0;
+    
+    cartItems.innerHTML = '';
+    
+    for (const [itemId, item] of Object.entries(cart)) {
+        if (item.quantity > 0) {
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            
+            cartItems.innerHTML += `
+                <div class="cart-item mb-2">
+                    <div class="d-flex justify-content-between">
+                        <span>${item.name} x${item.quantity}</span>
+                        <span>$${itemTotal.toFixed(2)}</span>
+                    </div>
+                </div>
+            `;
+        }
+    }
+    
+    cartTotal.textContent = total.toFixed(2);
+    checkoutBtn.disabled = total === 0;
+}
+
+// Event Listeners
+document.querySelectorAll('.increase-quantity').forEach(button => {
+    button.addEventListener('click', function() {
+        const itemId = this.dataset.itemId;
+        const itemName = this.closest('.card-body').querySelector('.card-title').textContent;
+        const itemPrice = parseFloat(this.closest('.card-body').querySelector('.price').textContent.replace('$', ''));
+        
+        if (!cart[itemId]) {
+            cart[itemId] = {
+                name: itemName,
+                price: itemPrice,
+                quantity: 0
+            };
+        }
+        
+        cart[itemId].quantity++;
+        this.previousElementSibling.textContent = cart[itemId].quantity;
+        updateCart();
+    });
+});
+
+document.querySelectorAll('.decrease-quantity').forEach(button => {
+    button.addEventListener('click', function() {
+        const itemId = this.dataset.itemId;
+        if (cart[itemId] && cart[itemId].quantity > 0) {
+            cart[itemId].quantity--;
+            this.nextElementSibling.textContent = cart[itemId].quantity;
+            updateCart();
+        }
+    });
+});
+
+// Filtrado de categorías
+document.querySelectorAll('.menu-categories button').forEach(button => {
+    button.addEventListener('click', function() {
+        const category = this.dataset.category;
+        
+        // Actualizar botones activos
+        document.querySelectorAll('.menu-categories button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        this.classList.add('active');
+        
+        // Filtrar items
+        document.querySelectorAll('.menu-item').forEach(item => {
+            if (category === 'all' || item.dataset.category === category) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Checkout
+document.getElementById('checkout-btn').addEventListener('click', function() {
+    const checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+    checkoutModal.show();
+});
+
+document.getElementById('submit-order').addEventListener('click', async function() {
+    const form = document.getElementById('checkout-form');
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+    
+    const orderData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        notes: document.getElementById('notes').value,
+        total_amount: parseFloat(document.getElementById('cart-total').textContent),
+        items: Object.entries(cart)
+            .filter(([_, item]) => item.quantity > 0)
+            .map(([id, item]) => ({
+                id: id,
+                quantity: item.quantity
+            }))
+    };
+    
+    try {
+        const response = await fetch('/submit-order/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(orderData)
+        });
+        
+        const data = await response.json();
+        
+        if (data.status === 'success') {
+            alert('¡Pedido realizado con éxito! Te enviaremos un correo con la confirmación.');
+            cart = {};
+            updateCart();
+            bootstrap.Modal.getInstance(document.getElementById('checkoutModal')).hide();
+        } else {
+            alert('Error al procesar el pedido. Por favor, intenta de nuevo.');
+        }
+    } catch (error) {
+        alert('Error al procesar el pedido. Por favor, intenta de nuevo.');
+    }
+});
+</script>
+{% endblock %} 

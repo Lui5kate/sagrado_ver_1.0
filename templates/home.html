@@ -1,0 +1,291 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section estilo portada -->
+<section class="hero-full-bg d-flex align-items-center justify-content-center">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative z-2">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <span class="hero-pretitle">“Where real Mexican flavour meets K' Road soul.”</span>
+                <h1 class="hero-title">Sagrado Cantina</h1>
+                <p class="hero-desc">Authentic Mexican street food reimagined in the heart of Auckland.</br>Tacos, drinks, and good vibes — all made with love.</p>
+                <a href="/menu" class="btn btn-light btn-lg mt-3 hero-btn">VIEW OUR MENU</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section py-5">
+    <div class="container-fluid px-0">
+        <div class="row g-0 flex-lg-nowrap flex-wrap">
+            <div class="col-lg-6 about-img-col position-relative" data-aos="fade-right">
+                <div class="about-image-wrapper w-100">
+                    <img src="/static/images/1000025347.jpg" alt="Sagrado Cantina Interior" class="about-image">
+                </div>
+            </div>
+            <div class="col-lg-6 px-4 px-lg-5 d-flex align-items-start" data-aos="fade-left">
+                <div class="about-content w-100">
+                    <h2 class="section-title">Our Story</h2>
+                    <p class="lead">Sacred flavour, born from fire, family and the streets of Mexico.</p>
+                    <p>Sagrado Cantina began as a dream thousands of kilometres away — a way to carry the flavour of my home in Chalco, México, into the heart of Auckland.</p>
+                    <p>I grew up surrounded by the smells of charcoal, slow-simmered salsas, and tortillas hot off the comal. But most of all, I grew up tasting the food of my mother, Leticia — una mujer con el tipo de sazón que no se aprende en ninguna escuela. Su cocina era atrevida, llena de alma y siempre hecha con cariño. Ella aprendió de mi abuela, una mujer fuerte de Tepito, y continuó ese legado en nuestra pequeña cocina — convirtiendo ingredientes simples en algo sagrado.</p>
+                    <p>After leaving Mexico at 24, I cooked my way through Australia and New Zealand — learning, growing, burning, starting over — until I was ready to bring something real to this side of the world.</p>
+                    <p>Sagrado is the result of that journey. It's more than just a taco spot. It's a tribute to my mother's fire, my grandmother's strength, and the streets that raised me. It's a cantina for anyone who craves honest food, loud flavours, and a little bit of chaos — the good kind.</p>
+                    <p>Everything we serve is made from scratch, just like mamá would — bold, balanced, and blessed.</p>
+                    <p class="lead">Bienvenidos a Sagrado Cantina.</p>
+                    <a href="/about" class="btn btn-outline-primary mt-3">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Dishes -->
+<section class="featured-dishes py-5">
+    <div class="container">
+        <h2 class="section-title text-center">Signature Dishes</h2>
+        <p class="section-subtitle text-center">Discover our most popular creations</p>
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card h-100">
+                    <div class="hover-zoom">
+                        <img src="/static/images/1000031094.jpg" class="card-img-top" alt="Dish 1">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Al Pastor Tacos</h5>
+                        <p class="card-text">Our special version of classic al pastor tacos, marinated in our secret recipe.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="hover-zoom">
+                        <img src="/static/images/1000032006.jpg" class="card-img-top" alt="Dish 2">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Puebla Mole</h5>
+                        <p class="card-text">Our traditional mole, prepared with over 20 ingredients and served with organic chicken.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="hover-zoom">
+                        <img src="/static/images/ChatGPT Image Apr 2, 2025, 01_31_29 PM.png" class="card-img-top" alt="Dish 3">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Shrimp Ceviche</h5>
+                        <p class="card-text">Fresh shrimp marinated in lime juice and served with avocado and homemade tostadas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5 text-center text-white" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/static/images/1000014494.jpg'); background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8" data-aos="zoom-in">
+                <h2 class="display-4 mb-4">Ready for a unique experience?</h2>
+                <p class="lead mb-4">Book your table now and enjoy the best Mexican cuisine in Auckland</p>
+                <a href="/book" class="btn btn-primary btn-lg me-3">Book a Table</a>
+                <a href="/order" class="btn btn-outline-light btn-lg">Order Online</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials py-5">
+    <div class="container">
+        <h2 class="section-title text-center">What Our Guests Say</h2>
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="card-text">"The best dining experience I've had. The service is exceptional and the food is simply delicious."</p>
+                        <h6 class="card-subtitle text-muted">- Sarah Thompson</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="card-text">"The atmosphere is amazing and the attention to detail in each dish is impressive. I'll definitely be back."</p>
+                        <h6 class="card-subtitle text-muted">- James Wilson</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="card-text">"A unique experience that perfectly combines tradition with innovation. Highly recommended!"</p>
+                        <h6 class="card-subtitle text-muted">- Emma Davis</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+body {
+    background-color: #181818 !important;
+    color: #fff;
+}
+
+.featured-dishes {
+    background: transparent !important;
+}
+
+.section-subtitle {
+    color: #aaa;
+}
+
+.hero-full-bg {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('/static/images/1000014494.jpg'); /* Cambia por la imagen que prefieras */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+    z-index: 1;
+}
+.hero-full-bg .container {
+    position: relative;
+    z-index: 2;
+}
+.hero-pretitle {
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: block;
+    opacity: 0.85;
+}
+.hero-title {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+.hero-desc {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+.hero-btn {
+    padding: 0.8rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background 0.3s, color 0.3s;
+}
+.hero-btn:hover {
+    background: #222;
+    color: #fff;
+}
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-desc {
+        font-size: 1rem;
+    }
+}
+.about-section {
+    background-color: var(--menu-bg-color);
+    display: block;
+    height: auto;
+    min-height: unset;
+    align-items: unset;
+}
+.about-img-col {
+    background: #181818;
+    display: flex;
+    align-items: flex-start;
+    min-height: 100%;
+}
+.about-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    max-height: 750px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+}
+.about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    position: static;
+}
+.about-content {
+    padding: 3rem 0;
+}
+@media (max-width: 991px) {
+    .about-section {
+        display: block;
+    }
+    .about-img-col {
+        min-height: unset;
+    }
+    .about-image-wrapper {
+        min-height: 250px;
+        max-height: 400px;
+    }
+    .about-content {
+        padding: 2rem 0;
+    }
+}
+</style>
+{% endblock %} 
