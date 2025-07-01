@@ -4,105 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sagrado Cantina - {% block title %}{% endblock %}</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/css/style.css">
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container-fluid">
+            <!-- Left Navigation Items (Desktop) -->
+            <ul class="navbar-nav ms-auto d-none d-lg-flex">
+                <li class="nav-item">
+                    <a class="nav-link custom-nav-link" href="/">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom-nav-link" href="/menu">MENU</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom-nav-link" href="/book">RESERVATIONS</a>
+                </li>
+            </ul>
+
+            <!-- Center Logo -->
+            <a class="navbar-brand mx-auto" href="/">
                 <img src="/static/images/logo print.png" alt="Sagrado Cantina" height="60" class="logo-img">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+            <!-- Right Navigation Items (Desktop) -->
+            <ul class="navbar-nav me-auto d-none d-lg-flex">
+                <li class="nav-item">
+                    <a class="nav-link custom-nav-link" href="/order">ORDER ONLINE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom-nav-link" href="/contact">CONTACT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom-nav-link" href="/about">ABOUT</a>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileMenu" aria-controls="navbarMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+
+            <!-- Mobile Menu -->
+            <div class="collapse navbar-collapse d-lg-none" id="navbarMobileMenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link custom-nav-link" href="/">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
+                        <a class="nav-link custom-nav-link" href="/about">RESTAURANT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/menu">Menu</a>
+                        <a class="nav-link custom-nav-link" href="/menu">MENU</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/order">Order Online</a>
+                        <a class="nav-link custom-nav-link" href="/book">RESERVATIONS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/order-history/">Order History</a>
+                        <a class="nav-link custom-nav-link" href="/order">ORDER ONLINE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout/">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login/">Login</a>
-                    </li>
-                    {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-light" href="/book">Book a Table</a>
+                        <a class="nav-link custom-nav-link" href="/contact">CONTACT</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Main Content -->
     <main class="main-content">
         {% block content %}{% endblock %}
     </main>
 
+    <!-- Footer -->
     <footer class="footer mt-auto py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4" data-aos="fade-up">
                     <h5 class="footer-title">Sagrado Cantina</h5>
-                    <p class="footer-text">Got questions, or just wanna talk tacos? Hit us up. Reach out — we're as friendly as our tortillas are warm.</p>
+                    <p class="footer-text">Authentic Mexican street food reimagined in the heart of Auckland. Tacos, drinks, and good vibes — all made with love.</p>
                     <img src="/static/images/logo print.png" alt="Sagrado Cantina" height="80" class="footer-logo">
+                    
+                    <!-- Google Rating -->
+                    <div class="mt-3">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="footer-text mt-1">5/5 on Google Maps</p>
+                    </div>
                 </div>
+                
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <h5 class="footer-title">Contact</h5>
+                    <h5 class="footer-title">Contact & Location</h5>
+                    <p class="footer-text"><i class="fas fa-map-marker-alt me-2"></i>183 Karangahape Road, Auckland Central, Auckland 1010, NZ</p>
+                    <p class="footer-text"><i class="fas fa-building me-2"></i>St Kevins Arcade</p>
                     <p class="footer-text"><i class="fas fa-envelope me-2"></i>sagradocantinanz@gmail.com</p>
-                    <p class="footer-text"><i class="fas fa-phone me-2"></i>02108067220</p>
-                    <p class="footer-text"><i class="fas fa-map-marker-alt me-2"></i>123 Queen Street, Auckland, NZ</p>
+                    
+                    <!-- Opening Hours -->
+                    <div class="mt-3">
+                        <h5 class="footer-title">Opening Hours</h5>
+                        <p class="mb-1">Tuesday - Saturday: 12:00 PM - 9:30 PM</p>
+                        <p class="mb-1">Sunday: 12:00 PM - 9:00 PM</p>
+                        <p class="mb-0">Monday: Closed</p>
+                    </div>
                 </div>
+                
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <h5 class="footer-title">Follow Us</h5>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/sagradocantina/" target="_blank" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://maps.app.goo.gl/5DoeSAs3GjsDimbo8" target="_blank" class="social-link" title="Google Maps">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </a>
                     </div>
-                    <div class="footer-hours mt-4">
-                        <h6>Opening Hours</h6>
-                        <p>Open daily from 11:30am to 10:00pm</p>
-                        <p>Walk-ins welcome</p>
+                    
+                    <!-- Quick Links -->
+                    <div class="mt-2">
+                        <h6 class="footer-title">Quick Links</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="/menu" class="footer-text text-decoration-none">View Menu</a></li>
+                            <li><a href="/book" class="footer-text text-decoration-none">Book a Table</a></li>
+                            <li><a href="/order" class="footer-text text-decoration-none">Order Online</a></li>
+                            <li><a href="/about" class="footer-text text-decoration-none">Our Story</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
+            
             <div class="row mt-4">
                 <div class="col-12 text-center">
-                    <p class="footer-copyright">&copy; 2025 Sagrado Cantina. All rights reserved.</p>
+                    <p class="footer-copyright">&copy; 2025 Sagrado Cantina. All rights reserved. | Authentic Mexican Cuisine in Auckland</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="/static/js/main.js"></script>
+    <script src="/static/js/payment.js"></script>
     <script>
         AOS.init({
             duration: 1000,
-            once: true
+            once: true,
+            offset: 100
         });
     </script>
     {% block extra_js %}{% endblock %}

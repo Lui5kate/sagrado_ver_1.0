@@ -1,73 +1,215 @@
 {% extends 'base.html' %}
 
-{% block title %}Contacto{% endblock %}
+{% block title %}Contact{% endblock %}
 
 {% block content %}
-<section class="contact-section py-5">
+<!-- Contact Hero Section -->
+<section class="contact-hero py-5" style="background: linear-gradient(rgba(196, 30, 58, 0.9), rgba(26, 26, 26, 0.9)), url('/static/images/1000014494.jpg'); background-size: cover; background-position: center;">
     <div class="container">
-        <h1 class="text-center mb-5">Contacto</h1>
-        
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center text-white">
+                <h1 class="display-4 mb-4">Get in Touch</h1>
+                <p class="lead">We'd love to hear from you. Whether you have a question about our menu, want to make a reservation, or just want to say hello, we're here to help.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information Section -->
+<section class="contact-info py-5">
+    <div class="container">
         <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="contact-info">
-                    <h3 class="mb-4" style="color: var(--color-dorado);">Información de Contacto</h3>
-                    <div class="mb-4">
-                        <h5><i class="fas fa-map-marker-alt me-2"></i>Dirección</h5>
-                        <p>Av. Reforma 123, Col. Centro<br>Ciudad de México, CDMX</p>
+            <div class="col-lg-4 mb-4" data-aos="fade-up">
+                <div class="contact-card text-center">
+                    <div class="contact-icon mb-3">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <div class="mb-4">
-                        <h5><i class="fas fa-phone me-2"></i>Teléfono</h5>
-                        <p>(55) 1234-5678</p>
+                    <h4 class="mexican-accent">Location</h4>
+                    <p>183 Karangahape Road<br>Auckland Central, Auckland 1010<br>New Zealand</p>
+                    <p class="text-muted">Located inside St Kevins Arcade</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-card text-center">
+                    <div class="contact-icon mb-3">
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <div class="mb-4">
-                        <h5><i class="fas fa-envelope me-2"></i>Email</h5>
-                        <p>info@sagradocantina.com</p>
-                    </div>
-                    <div class="mb-4">
-                        <h5><i class="fas fa-clock me-2"></i>Horario</h5>
-                        <p>Lunes a Viernes: 12:00 PM - 11:00 PM<br>
-                        Sábado y Domingo: 12:00 PM - 12:00 AM</p>
+                    <h4 class="mexican-accent">Opening Hours</h4>
+                    <div class="hours-list">
+                        <div class="d-flex justify-content-between">
+                            <span>Tuesday - Saturday</span>
+                            <span>12:00 PM - 9:30 PM</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Sunday</span>
+                            <span>12:00 PM - 9:00 PM</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Monday</span>
+                            <span class="text-danger">Closed</span>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="col-md-6">
-                <div class="contact-form">
-                    <h3 class="mb-4" style="color: var(--color-dorado);">Envíanos un Mensaje</h3>
-                    <form id="contactForm">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nombre Completo</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="subject" class="form-label">Asunto</label>
-                            <input type="text" class="form-control" id="subject" name="subject" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-outline-light">Enviar Mensaje</button>
-                    </form>
+            <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-card text-center">
+                    <div class="contact-icon mb-3">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4 class="mexican-accent">Contact</h4>
+                    <p>sagradocantinanz@gmail.com</p>
+                    <p class="text-muted">Follow us on Instagram for updates</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.instagram.com/sagradocantina/" target="_blank" class="social-link-contact">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://maps.app.goo.gl/5DoeSAs3GjsDimbo8" target="_blank" class="social-link-contact">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="row mt-5">
-            <div class="col-12">
+<!-- Map Section -->
+<section class="map-section py-5" style="background-color: var(--section-bg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12" data-aos="fade-up">
+                <h2 class="section-title text-center">Find Us</h2>
+                <p class="section-subtitle text-center">Visit us at St Kevins Arcade in the heart of Auckland</p>
                 <div class="map-container">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.888456257539!2d-99.1675!3d19.4270!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzM3LjIiTiA5OcKwMTAnMDMuMCJX!5e0!3m2!1ses!2smx!4v1234567890"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.5!2d174.7!3d-36.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47e5c5c5c5c5%3A0x5c5c5c5c5c5c5c5c!2sSt+Kevins+Arcade!5e0!3m2!1sen!2snz!4v1234567890"
                         width="100%" 
                         height="450" 
                         style="border:0;" 
                         allowfullscreen="" 
-                        loading="lazy">
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="contact-form-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-form" data-aos="fade-up">
+                    <h2 class="section-title text-center">Send us a Message</h2>
+                    <p class="section-subtitle text-center">Have a question or want to make a reservation? Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Name *</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="phone" name="phone">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <select class="form-control" id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="reservation">Reservation Request</option>
+                                    <option value="menu">Menu Inquiry</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="general">General Question</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section py-5" style="background-color: var(--section-bg);">
+    <div class="container">
+        <h2 class="section-title text-center">Frequently Asked Questions</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item" data-aos="fade-up">
+                        <h2 class="accordion-header" id="faq1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                Do you take reservations?
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! We accept reservations for both lunch and dinner. You can book online through our website or contact us directly. We recommend booking in advance, especially for weekend evenings.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                        <h2 class="accordion-header" id="faq2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                Do you offer delivery or takeaway?
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! We offer both delivery and takeaway services. You can order online through our website or call us directly. We partner with local delivery services to bring our authentic Mexican flavours to your doorstep.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="accordion-header" id="faq3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                Do you accommodate dietary restrictions?
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Absolutely! We offer vegetarian and vegan options, and we can accommodate most dietary restrictions. Please let us know about any allergies or dietary requirements when you visit or order, and we'll be happy to help you find the perfect dish.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                        <h2 class="accordion-header" id="faq4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                Is parking available?
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                St Kevins Arcade has limited parking, but there are several parking options nearby. We recommend using public transport or finding street parking in the surrounding area. The location is easily accessible by bus and is within walking distance from the CBD.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,38 +217,160 @@
 </section>
 {% endblock %}
 
-{% block extra_js %}
-<script>
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-    };
+{% block extra_css %}
+<style>
+/* Contact Hero Styles */
+.contact-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
 
-    try {
-        const response = await fetch('/submit-contact/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-        });
+/* Contact Info Styles */
+.contact-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+}
 
-        const data = await response.json();
-        
-        if (data.status === 'success') {
-            alert('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.');
-            this.reset();
-        } else {
-            alert('Error al enviar el mensaje. Por favor, intenta de nuevo.');
-        }
-    } catch (error) {
-        alert('Error al enviar el mensaje. Por favor, intenta de nuevo.');
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.contact-card h4 {
+    margin-bottom: 1rem;
+}
+
+.hours-list {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.hours-list .d-flex {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.hours-list .d-flex:last-child {
+    border-bottom: none;
+}
+
+/* Map Styles */
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Contact Form Styles */
+.contact-form {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+}
+
+/* FAQ Styles */
+.accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.accordion-button {
+    background: white;
+    color: var(--primary-color);
+    font-weight: 600;
+    border: none;
+    padding: 1.5rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background: var(--primary-color);
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--accent-color);
+}
+
+.accordion-body {
+    padding: 1.5rem;
+    background: #f8f9fa;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-link-contact {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+    /* background-color: rgba(196, 30, 58, 0.1); */
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    background-color: rgba(212, 175, 55, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-card {
+        margin-bottom: 2rem;
     }
-});
-</script>
+    
+    .contact-form {
+        padding: 2rem;
+    }
+    
+    .contact-hero {
+        min-height: 40vh;
+    }
+}
+</style>
 {% endblock %} 
