@@ -3,7 +3,34 @@
 {% block title %}Acerca de Nosotros{% endblock %}
 
 {% block content %}
+<!-- About Section -->
 <section class="about-section py-5">
+    <div class="container-fluid px-0">
+        <div class="row g-0 flex-lg-nowrap flex-wrap">
+            <div class="col-lg-6 about-img-col position-relative" data-aos="fade-right">
+                <div class="about-image-wrapper w-100">
+                    <img src="/static/images/1000025347.jpg" alt="Sagrado Cantina Interior" class="about-image">
+                </div>
+            </div>
+            <div class="col-lg-6 px-4 px-lg-5 d-flex align-items-start" data-aos="fade-left">
+                <div class="about-content w-100">
+                    <h2 class="section-title">Our Story</h2>
+                    <p class="lead mexican-accent">Sacred flavour, born from fire, family and the streets of Mexico.</p>
+                    <p>Sagrado Cantina began as a dream thousands of kilometres away — a way to carry the flavour of my home in Chalco, México, into the heart of Auckland.</p>
+                    <p>I grew up surrounded by the smells of charcoal, slow-simmered salsas, and tortillas hot off the comal. But most of all, I grew up tasting the food of my mother, Leticia — a woman with the kind of sazón you can’t learn in any school. Her cooking was bold, soulful, and always made with care. She learned from my grandmother, a strong woman from Tepito, and continued that legacy in our small kitchen — turning simple ingredients into something sacred.</p>
+                    <p>After leaving Mexico at 24, I cooked my way through Australia and New Zealand — learning, growing, burning, starting over — until I was ready to bring something real to this side of the world.</p>
+                    <p>Sagrado is the result of that journey. It's more than just a taco spot. It's a tribute to my mother's fire, my grandmother's strength, and the streets that raised me. It's a cantina for anyone who craves honest food, loud flavours, and a little bit of chaos — the good kind.</p>
+                    <p>Everything we serve is made from scratch, just like mamá would — bold, balanced, and blessed.</p>
+                    <p class="lead mexican-accent-gold">Bienvenidos a Sagrado Cantina.</p>
+                    <a href="/about" class="btn btn-outline-primary mt-3">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- <section class="about-section py-5">
     <div class="container">
         <h1 class="text-center mb-5">Our Story</h1>
         
@@ -32,9 +59,9 @@
                     <li><i class="fas fa-check-circle me-2" style="color: var(--color-dorado);"></i>Experiencia gastronómica memorable</li>
                 </ul>
             </div>
-        </div>
+        </div> -->
 
-        <div class="row mb-5">
+        <!-- <div class="row mb-5">
             <div class="col-12 text-center">
                 <h2 class="mb-4" style="color: var(--color-dorado);">Nuestro Equipo</h2>
                 <p class="lead mb-5">Detrás de cada platillo hay un equipo apasionado por la gastronomía mexicana</p>
@@ -63,31 +90,31 @@
                     <p>Maestra en postres tradicionales mexicanos</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="mb-4" style="color: var(--color-dorado);">Nuestros Valores</h2>
+                <h2 class="section-title">Our Values</h2>
                 <div class="row">
                     <div class="col-md-4 mb-4">
                         <div class="value-item">
                             <i class="fas fa-heart fa-3x mb-3" style="color: var(--color-dorado);"></i>
-                            <h4>Pasión</h4>
-                            <p>Amor por la gastronomía mexicana y su tradición</p>
+                            <h4>Passion</h4>
+                            <p>Love for Mexican gastronomy and its tradition</p>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="value-item">
                             <i class="fas fa-leaf fa-3x mb-3" style="color: var(--color-dorado);"></i>
-                            <h4>Sustentabilidad</h4>
-                            <p>Compromiso con ingredientes locales y prácticas sostenibles</p>
+                            <h4>Freshness</h4>
+                            <p>Always fresh and local ingredients</p>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="value-item">
                             <i class="fas fa-users fa-3x mb-3" style="color: var(--color-dorado);"></i>
-                            <h4>Comunidad</h4>
-                            <p>Creación de experiencias que unen a las personas</p>
+                            <h4>Community</h4>
+                            <p>Creating experiences that bring people together</p>
                         </div>
                     </div>
                 </div>
@@ -95,4 +122,28 @@
         </div>
     </div>
 </section>
+
+<style>
+/* About Section Styles */
+.about-section {
+    background: white;
+}
+
+.about-image-wrapper {
+    height: 100%;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content {
+    padding: 3rem 0;
+}
+</style>
+
 {% endblock %} 
