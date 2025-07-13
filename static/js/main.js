@@ -394,24 +394,24 @@ const animateOnScroll = () => {
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
 
-// // Navegación responsive
-// const navbarToggler = document.querySelector('.navbar-toggler');
-// const navbarCollapse = document.querySelector('.navbar-collapse');
+// Navegación responsive
+const navbarToggler = document.querySelector('.navbar-toggler');
+const navbarCollapse = document.querySelector('.navbar-collapse');
 
-// if (navbarToggler && navbarCollapse) {
-//     navbarToggler.addEventListener('click', () => {
-//         navbarCollapse.classList.toggle('show');
-//     });
+if (navbarToggler && navbarCollapse) {
+    navbarToggler.addEventListener('click', () => {
+        navbarCollapse.classList.toggle('show');
+    });
 
-//     // Cerrar el menú al hacer clic en un enlace
-//     document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-//         link.addEventListener('click', () => {
-//             if (navbarCollapse.classList.contains('show')) {
-//                 navbarCollapse.classList.remove('show');
-//             }
-//         });
-//     });
-// }
+    // Cerrar el menú al hacer clic en un enlace
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
+        });
+    });
+}
 
 // Efecto parallax para la sección hero
 const heroSection = document.querySelector('.hero-section');
